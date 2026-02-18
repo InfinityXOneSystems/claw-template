@@ -163,7 +163,8 @@ class WebSocketService {
 
   sendToClient(clientId, data) {
     const client = this.clients.get(clientId);
-    if (client && client.ws.readyState === 1) {
+    const WebSocket = require('ws');
+    if (client && client.ws.readyState === WebSocket.OPEN) {
       client.ws.send(JSON.stringify(data));
     }
   }
@@ -180,8 +181,9 @@ class WebSocketService {
   }
 
   broadcast(data, excludeClientId = null) {
+    const WebSocket = require('ws');
     this.clients.forEach((client, clientId) => {
-      if (clientId !== excludeClientId && client.ws.readyState === 1) {
+      if (clientId !== excludeClientId && client.ws.readyState === WebSocket.OPEN) {
         client.ws.send(JSON.stringify(data));
       }
     });

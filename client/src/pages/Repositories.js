@@ -11,7 +11,7 @@ function Repositories() {
   const [githubToken, setGithubToken] = useState(localStorage.getItem('github_token') || '');
   const [showTokenInput, setShowTokenInput] = useState(!githubToken);
 
-  const mockRepos = [
+  const mockRepos = React.useMemo(() => [
     {
       id: 1,
       name: 'claw-template',
@@ -45,7 +45,7 @@ function Repositories() {
       updated_at: new Date(Date.now() - 172800000).toISOString(),
       synced: true
     }
-  ];
+  ], []);
 
   useEffect(() => {
     if (githubToken) {
@@ -53,7 +53,7 @@ function Repositories() {
     } else {
       setRepositories(mockRepos);
     }
-  }, [githubToken]);
+  }, [githubToken, mockRepos]);
 
   const loadRepositories = async () => {
     setLoading(true);

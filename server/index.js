@@ -4,6 +4,7 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
 const WebSocket = require('ws');
+const path = require('path');
 
 // Load environment variables
 dotenv.config();

@@ -8,8 +8,6 @@ class DatabaseService {
   async connect() {
     try {
       const options = {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
         serverSelectionTimeoutMS: 5000,
       };
 

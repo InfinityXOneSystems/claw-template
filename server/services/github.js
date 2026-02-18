@@ -12,7 +12,7 @@ class GitHubService {
 
   getHeaders() {
     return {
-      'Authorization': `token ${this.token}`,
+      'Authorization': `Bearer ${this.token}`,
       'Accept': 'application/vnd.github.v3+json',
       'User-Agent': 'Claw-Autonomous-System'
     };
