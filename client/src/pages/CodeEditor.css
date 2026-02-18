@@ -1,0 +1,175 @@
+.code-editor-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  padding-top: 64px;
+}
+
+.editor-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.editor-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.language-select {
+  padding: 10px 16px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.editor-layout {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 20px;
+  height: calc(100vh - 200px);
+}
+
+.editor-panel,
+.editor-sidebar {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-header h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.panel-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.code-textarea {
+  flex: 1;
+  padding: 20px;
+  background: var(--bg-primary);
+  border: none;
+  color: var(--text-primary);
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  resize: none;
+  outline: none;
+}
+
+.editor-sidebar {
+  overflow-y: auto;
+}
+
+.ai-prompt-section {
+  padding: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.prompt-textarea {
+  width: 100%;
+  padding: 12px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 14px;
+  font-family: inherit;
+  resize: none;
+  margin-bottom: 12px;
+}
+
+.prompt-textarea:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+}
+
+.analysis-section {
+  padding: 20px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.analysis-section h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.analysis-content {
+  padding: 16px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.quick-actions-section {
+  padding: 20px;
+}
+
+.quick-actions-section h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.quick-action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.quick-action-buttons .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .editor-layout {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .code-textarea {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .editor-container {
+    padding: 20px 16px;
+  }
+
+  .editor-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
