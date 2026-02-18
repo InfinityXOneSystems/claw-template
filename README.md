@@ -9,8 +9,9 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](https://nodejs.org/)
 [![React](https://img.shields.io/badge/React-18.2+-blue.svg)](https://reactjs.org/)
+[![Docker](https://img.shields.io/badge/Docker-Ready-blue.svg)](https://www.docker.com/)
 
-[Features](#features) • [Quick Start](#quick-start) • [Architecture](#architecture) • [Documentation](#documentation)
+[Features](#features) • [Quick Start](#quick-start) • [Docker](#docker-deployment) • [Architecture](#architecture) • [Documentation](#documentation)
 
 </div>
 
@@ -132,6 +133,48 @@ claw-template/
    - Frontend: http://localhost:3000
    - Backend API: http://localhost:5000
    - WebSocket: ws://localhost:5001
+
+## 🐳 Docker Deployment
+
+**The fastest way to get started!**
+
+### Quick Start with Docker
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/InfinityXOneSystems/claw-template.git
+cd claw-template
+
+# 2. Configure environment
+cp .env.docker .env
+# Edit .env with your API keys
+
+# 3. Launch with Docker
+docker-compose up -d
+
+# 4. Access the application
+# Frontend: http://localhost
+# Backend: http://localhost:5000
+# WebSocket: ws://localhost:5001
+```
+
+### Docker Commands
+
+```bash
+# Start services
+docker-compose up -d
+
+# View logs
+docker-compose logs -f
+
+# Stop services
+docker-compose down
+
+# Rebuild after changes
+docker-compose up -d --build
+```
+
+**Full Docker documentation:** See [DOCKER.md](DOCKER.md)
 
 ### Production Deployment
 
